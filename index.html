@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segundo parcial Laboratorio 3 - Lamas</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="js/main.js"></script>
+    <script src="js/Vehiculo.js"></script>
+</head>
+<body>
+    <input type="button" id="addButton" value="Agregar">
+    <header>
+        <h4>Filtros</h4>
+        <div id="filtros">
+            <label for="filtroTipo">Filtrar por: </label>
+            <select name="filtroTipo" id="filtroTipo">
+                <option value="todos" id="todos">Todos</option>
+                <option value="auto" id="auto">Auto</option>
+                <option value="camioneta" id="camioneta">Camioneta</option>
+            </select>
+        </div>
+        <div id="selectorColumna">
+            <label for="idCheck">ID</label>
+            <input type="checkbox" id="idCheck" checked>
+            <label for="MarcaCheck">Marca</label>
+            <input type="checkbox" id="MarcaCheck" checked>
+            <label for="ModeloCheck">Modelo</label>
+            <input type="checkbox" id="ModeloCheck" checked>
+            <label for="PrecioCheck">Precio</label>
+            <input type="checkbox" id="PrecioCheck" checked>
+        </div>
+        <div id="promedio">Promedio de precios: <input type="text" disabled></div>
+    </header>
+    <hl>
+    <div id="mainDiv">
+        <table id="tabla">
+            <tr>
+                <th>Id</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Precio</th>
+                <th>Accion</th>
+            </tr>
+        </table><br>
+        <div id="addMenu" hidden>
+        <h3>Alta Vehiculo</h3>
+            <label for="txtMarca">Marca: </label>
+            <input type="text" name="txtMarca" id="txtMarca" class="menuInput"><br>
+            <label for="txtModelo">Modelo: </label>
+            <input type="text" name="txtModelo" id="txtModelo" class="menuInput"><br>
+            <label for="numPrecio">Precio: </label>
+            <input type="number" name="numPrecio" id="numPrecio" min="0" value="0" step="0.01" class="menuInput"><br>
+            <label for="selectorTipo">Tipo: </label>
+            <select name="selectorTipo" id="selectorTipo" class="menuInput">
+                <option value="auto" id="auto">Auto</option>
+                <option value="camioneta" id="camioneta">Camioneta</option>
+            </select>
+            <br>
+            <input type="button" value="Agregar" class="btn" id="btnConfirmar">
+            <input type="button" value="Cerrar" class="btn" id="btnCancelar">
+        </div>
+    </div>
+
+</body>
+</html>
