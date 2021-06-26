@@ -64,12 +64,17 @@ var Main = /** @class */ (function () {
     }
     Main.prototype.mostrarVentana = function (btn) {
         btn.hidden = true;
-        console.log("habemus boton");
         var window = $("addMenu");
         window.hidden = false;
     };
     Main.prototype.mostrarOcultarColumna = function (s) {
-        var elemento = $(s);
+        var tabla = $("tabla");
+        switch (s) {
+            case "checkId":
+                break;
+            default:
+                break;
+        }
     };
     return Main;
 }());

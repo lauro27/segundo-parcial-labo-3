@@ -5,7 +5,7 @@ function $(id:string){ return document.getElementById(id);}
 function prepareSite()
 {
     let main = new Main();
-    var addbtn = <HTMLElement> $("addButton");
+    var addbtn = <HTMLInputElement> $("addButton");
     addbtn.addEventListener("click",  function(){main.mostrarVentana(addbtn)});
 
     var checkId = <HTMLElement> $("idCheck");
@@ -73,17 +73,24 @@ function prepareSite()
 }
 
 class Main {
-    public mostrarVentana(btn:HTMLElement):void
+    public mostrarVentana(btn:HTMLInputElement):void
     {
         btn.hidden = true;
-        console.log("habemus boton");
         let window: HTMLElement = <HTMLElement> $("addMenu");
         window.hidden = false;
     }
     
     public mostrarOcultarColumna(s:string)
     {
-        let elemento: HTMLElement = <HTMLElement> $(s);
+        let tabla: HTMLElement= <HTMLElement> $("tabla");
+        switch (s) {
+            case "checkId":
+                
+                break;
+        
+            default:
+                break;
+        }
     }
 
     
