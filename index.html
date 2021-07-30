@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Segundo parcial Laboratorio 3 - Lamas</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="js/main.js"></script>
-    <script src="js/Vehiculo.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/Vehiculo.js"></script>
 </head>
 <body>
     <input type="button" id="addButton" value="Agregar">
@@ -16,7 +16,7 @@
         <div id="filtros">
             <label for="filtroTipo">Filtrar por: </label>
             <select name="filtroTipo" id="filtroTipo">
-                <option value="todos" id="todos">Todos</option>
+                <option value="todos" id="todos" selected="selected">Todos</option>
                 <option value="auto" id="auto">Auto</option>
                 <option value="camioneta" id="camioneta">Camioneta</option>
             </select>
@@ -30,38 +30,70 @@
             <input type="checkbox" id="ModeloCheck" checked>
             <label for="PrecioCheck">Precio</label>
             <input type="checkbox" id="PrecioCheck" checked>
+            <label for="DetalleCheck">Detalle</label>
+            <input type="checkbox" id="DetalleCheck" checked>
         </div>
-        <div id="promedio">Promedio de precios: <input type="text" disabled></div>
+        <div id="promedio">
+            Promedio de precios: <input type="text" id="txtPromedio" disabled><br>
+            <input type="button" value="Calcular promedio" class="btn" id="btnPromedio" onclick="vehiculos.calcularPromedio();">
+        </div>
     </header>
+    <!--TABLA-->
     <hl>
-    <div id="mainDiv">
-        <table id="tabla">
-            <tr>
-                <th>Id</th>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Precio</th>
-                <th>Accion</th>
-            </tr>
-        </table><br>
-        <div id="addMenu" hidden>
-        <h3>Alta Vehiculo</h3>
-            <label for="txtMarca">Marca: </label>
-            <input type="text" name="txtMarca" id="txtMarca" class="menuInput"><br>
-            <label for="txtModelo">Modelo: </label>
-            <input type="text" name="txtModelo" id="txtModelo" class="menuInput"><br>
-            <label for="numPrecio">Precio: </label>
-            <input type="number" name="numPrecio" id="numPrecio" min="0" value="0" step="0.01" class="menuInput"><br>
-            <label for="selectorTipo">Tipo: </label>
-            <select name="selectorTipo" id="selectorTipo" class="menuInput">
-                <option value="auto" id="auto">Auto</option>
-                <option value="camioneta" id="camioneta">Camioneta</option>
-            </select>
-            <br>
-            <input type="button" value="Agregar" class="btn" id="btnConfirmar">
-            <input type="button" value="Cerrar" class="btn" id="btnCancelar">
+        <div id="mainDiv">
+            <table id="tabla">
+                <col class="col1"/>
+                <col class="col2"/>
+                <col class="col3"/>
+                <col class="col4"/>
+                <col class="col5"/>
+                <col class="col6"/>
+                <thead><tr>
+                    <th>Id</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Precio</th>
+                    <th>Detalle</th>
+                    <th>Accion</th>
+                </tr></thead>
+                <tbody id="tCuerpo">
+                    
+                </tbody>
+                
+            </table><br>
+            <!--MENU DE AGREGADO-->
+            <div id="addMenu">
+                <h3>Alta Vehiculo</h3>
+                <label for="txtMarca">Marca: </label>
+                <input type="text" name="txtMarca" id="txtMarca" class="menuInput"><br><br>
+                
+                <label for="txtModelo">Modelo: </label>
+                <input type="text" name="txtModelo" id="txtModelo" class="menuInput"><br><br>
+                
+                <label for="numPrecio">Precio: </label>
+                <input type="number" name="numPrecio" id="numPrecio" min="0" value="0" step="0.01" class="menuInput"><br><br>
+                
+                <label for="selectorTipo">Tipo: </label>
+                <select name="selectorTipo" id="selectorTipo" class="menuInput">
+                    <option value="auto" id="auto">Auto</option>
+                    <option value="camioneta" id="camioneta" selected="selected">Camioneta</option>
+                </select><br><br>
+                
+                <div id="selectorCuatro">
+                    <label for="checkCuatro">Es 4x4: </label>
+                    <input type="checkbox" name="checkCuatro" id="checkCuatro" class="menuInput"><br>
+                </div>
+                
+                <div id="selectorPuertas" hidden>
+                    <label for="numPuertas">Numero de puertas: </label>
+                    <input type="number" name="numPuertas" id="numPuertas" min="2" value="2" class="menuInput"><br>
+                </div>
+                
+                <br><br>
+                <input type="button" value="Agregar" class="btn" id="btnConfirmar" onclick="vehiculos.agregar();">
+                <input type="button" value="Cerrar" class="btn" id="btnCancelar" onclick="vehiculos.cerrarVentana();">
+            </div>
         </div>
-    </div>
-
-</body>
-</html>
+        
+    </body>
+    </html>

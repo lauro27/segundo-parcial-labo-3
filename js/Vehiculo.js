@@ -14,36 +14,42 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Vehiculo = /** @class */ (function () {
-    function Vehiculo(i, mar, mod, pre) {
-        this.id = 0;
-        this.marca = "";
-        this.modelo = "";
-        this.precio = 0;
-        this.id = i;
-        this.marca = mar;
-        this.modelo = mod;
-        this.precio = pre;
-    }
-    return Vehiculo;
-}());
-var Auto = /** @class */ (function (_super) {
-    __extends(Auto, _super);
-    function Auto(i, mar, mod, pre, cPuertas) {
-        var _this = _super.call(this, i, mar, mod, pre) || this;
-        _this.cantidadPuertas = 2;
-        _this.cantidadPuertas = cPuertas;
-        return _this;
-    }
-    return Auto;
-}(Vehiculo));
-var Camioneta = /** @class */ (function (_super) {
-    __extends(Camioneta, _super);
-    function Camioneta(i, mar, mod, pre, cuatro) {
-        var _this = _super.call(this, i, mar, mod, pre) || this;
-        _this.cuatroXcuatro = false;
-        _this.cuatroXcuatro = cuatro;
-        return _this;
-    }
-    return Camioneta;
-}(Vehiculo));
+var vehiculos;
+(function (vehiculos) {
+    var Vehiculo = /** @class */ (function () {
+        function Vehiculo(i, mar, mod, pre) {
+            this.id = 0;
+            this.marca = "";
+            this.modelo = "";
+            this.precio = 0;
+            this.id = i;
+            this.marca = mar;
+            this.modelo = mod;
+            this.precio = pre;
+        }
+        return Vehiculo;
+    }());
+    vehiculos.Vehiculo = Vehiculo;
+    var Auto = /** @class */ (function (_super) {
+        __extends(Auto, _super);
+        function Auto(i, mar, mod, pre, cPuertas) {
+            var _this = _super.call(this, i, mar, mod, pre) || this;
+            _this.cantidadPuertas = 2;
+            _this.cantidadPuertas = cPuertas;
+            return _this;
+        }
+        return Auto;
+    }(Vehiculo));
+    vehiculos.Auto = Auto;
+    var Camioneta = /** @class */ (function (_super) {
+        __extends(Camioneta, _super);
+        function Camioneta(i, mar, mod, pre, cuatro) {
+            var _this = _super.call(this, i, mar, mod, pre) || this;
+            _this.cuatroXcuatro = false;
+            _this.cuatroXcuatro = cuatro;
+            return _this;
+        }
+        return Camioneta;
+    }(Vehiculo));
+    vehiculos.Camioneta = Camioneta;
+})(vehiculos || (vehiculos = {}));
